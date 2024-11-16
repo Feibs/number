@@ -1,4 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  font-family: Rubik, sans-serif;
+  font-size: 1.125rem;
+}
+
 .App {
-  font-family: sans-serif;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 100vh;
+  padding: 0 2rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+input {
+  padding: 0.25rem;
+  border-radius: 8px;
+  width: 210px;
+  text-align: center;
+}
+
+button {
+  border: none;
+  background-color: #0080c6;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  color: white;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0071ae;
+}
+
+button:active {
+  background-color: #006398;
+}
+
+.result {
+  font-weight: 500;
 }
