@@ -11,6 +11,11 @@
 - Sample #2 = If the number is 30 then the reverse is 3 (not 03) and the difference is 27
 - Sample #3 = If the number is 1.2 or 1,2 then only shows 12 and the reverse is 21, while the difference is 9
 
+## Assumption
+
+- The reverse of a single digit is the digit itself, thus the difference will be 0
+- The maximum input is a 15-digits number
+
 ## Run Locally
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -20,4 +25,8 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view it locally in your browser.
+
+## Run Deployed Site
+
+Open [https://feibs.github.io/number/](https://feibs.github.io/number/) to view it in your browser.
