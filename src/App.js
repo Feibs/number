@@ -4,12 +4,16 @@ import React, { useState } from "react";
 export default function App() {
   const [numInput, setNumInput] = useState("");
   const [result, setResult] = useState(0);
+  const maxLength = 15;
 
   function handleChange(event) {
     let input = event.target.value;
     input = changePunctuation(input);
     if (input.length > 1 && input.startsWith("0")) {
       input = changeZero(input);
+    }
+    if (input.length === maxLength) {
+      input = changeOverflow(input);
     }
     setNumInput(input);
   }
@@ -23,6 +27,10 @@ export default function App() {
       return "0";
     }
     return text.substring(1);
+  }
+
+  function changeOverflow(text) {
+    return text.substring(0, maxLength);
   }
 
   function handleKeyDown(event) {
@@ -57,16 +65,17 @@ export default function App() {
 
   return (
     <div className="App">
-      <div>
+      <div className="input-container">
         Number:
         <input
           value={numInput}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
+          maxLength={15}
         />
         <button onClick={handleInput}>Submit</button>
       </div>
-      <div>Result: {result}</div>
+      <div className="result">Result: {result}</div>
     </div>
   );
 }
