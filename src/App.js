@@ -8,28 +8,28 @@ export default function App() {
 
   function handleChange(event) {
     let input = event.target.value;
-    input = changePunctuation(input);
+    input = removePunctuation(input);
     if (input.length > 1 && input.startsWith("0")) {
-      input = changeZero(input);
+      input = removeLeadingZero(input);
     }
     if (input.length === maxLength) {
-      input = changeOverflow(input);
+      input = removeOverflow(input);
     }
     setNumInput(input);
   }
 
-  function changePunctuation(text) {
+  function removePunctuation(text) {
     return text.replace(/[^\d]/g, "");
   }
 
-  function changeZero(text) {
+  function removeLeadingZero(text) {
     if (text.endsWith("0")) {
       return "0";
     }
     return text.substring(1);
   }
 
-  function changeOverflow(text) {
+  function removeOverflow(text) {
     return text.substring(0, maxLength);
   }
 
